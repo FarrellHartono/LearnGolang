@@ -4,40 +4,28 @@ import "fmt"
 
 func main() {
 
-	// strings
-	var nameOne string = "Farrell"
-	var nameTwo = "luigi"
-	var nameThree string
-	nameThree = "mario"
+	name := "Farrell"
+	age := 21
 
-	fmt.Println(nameOne, nameTwo, nameThree)
-	nameOne = "Hartono"
+	// Print
+	fmt.Print("hello, ")
+	fmt.Print("world, \n")
+	fmt.Print("new line \n")
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// Println
+	fmt.Println("Hello World!")
+	fmt.Println("my name is", name, "and my age is", age)
 
-	nameFour := "Ignatius"
+	// Printf (formatted strings) %_ = merupakan format specifier
+	fmt.Printf("my age is %v and my name is %v \n", age, name)
+	fmt.Printf("my age is %q and my name is %q \n", age, name)
+	fmt.Printf("age is of type %T \n", age)
+	fmt.Printf("you scored %f points! \n", 225.55)
+	fmt.Printf("you scored %.2f points! \n", 225.55)
 
-	fmt.Println(nameFour)
+	// Sprintf (save formatted strings)
+	var str = fmt.Sprintf("my age is %v and my name is %v \n", age, name)
 
-	// ints
-	var ageOne int = 21
-	var ageTwo = 3
-	ageThree := 4
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits & memory
-	var numOne int16 = 25
-	var numTwo = -129
-	var numThree uint8 = 255
-	fmt.Println(numOne, numTwo, numThree)
-
-	// Float
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 888729.21231
-	// Bydefault ini float64
-	scoreThree:= -1.5
-
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
+	fmt.Println("The save string is:", str)
 
 }
