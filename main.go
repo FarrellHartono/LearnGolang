@@ -3,41 +3,35 @@ package main
 import "fmt"
 
 func main() {
+	// ARRAY
 
-	// strings
-	var nameOne string = "Farrell"
-	var nameTwo = "luigi"
-	var nameThree string
-	nameThree = "mario"
+	// var ages [3]int = [3]int{20, 25, 30}
+	// sama aja kek yg diatas
+	var ages = [3]int{20, 25, 30}
 
-	fmt.Println(nameOne, nameTwo, nameThree)
-	nameOne = "Hartono"
+	names := [4]string{"farrell", "hartono", "luigi", "mario"}
+	names[1] = "Hartono"
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	nameFour := "Ignatius"
+	// SLICES (use arrays under the hood)
 
-	fmt.Println(nameFour)
+	var scores = []int{100, 50, 60}
+	scores[2] = 25
+	// dia nambahin dirow paling belakang si append
+	scores = append(scores, 85)
+	fmt.Println(scores, len(scores))
 
-	// ints
-	var ageOne int = 21
-	var ageTwo = 3
-	ageThree := 4
+	// slice ranges : dia cuman ngambil dari posisi 1-3 (inklusif)
+	// inklusif jadi 1-3 array posisi ketiga tidak diambil
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
 
-	fmt.Println(ageOne, ageTwo, ageThree)
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
 
-	// bits & memory
-	var numOne int16 = 25
-	var numTwo = -129
-	var numThree uint8 = 255
-	fmt.Println(numOne, numTwo, numThree)
-
-	// Float
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 888729.21231
-	// Bydefault ini float64
-	scoreThree:= -1.5
-
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
+	rangeOne = append(rangeOne, "koopa")
+	fmt.Println(rangeOne)
 
 }
