@@ -1,37 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	// ARRAY
+	// greeting := "hello There Farrell!"
 
-	// var ages [3]int = [3]int{20, 25, 30}
-	// sama aja kek yg diatas
-	var ages = [3]int{20, 25, 30}
+	// fmt.Println(strings.Contains(greeting, "Farrell"))
+	// fmt.Println(strings.ReplaceAll(greeting, "hello", "Greetings"))
+	// fmt.Println(strings.ToUpper(greeting))
+	// fmt.Println(strings.Index(greeting, "rr"))
+	// fmt.Println(strings.Split(greeting, " "))
 
-	names := [4]string{"farrell", "hartono", "luigi", "mario"}
-	names[1] = "Hartono"
+	// function replace tidak menggantikan string nya jadi valuenya masih seperti hello There Farrell!
+	// fmt.Println("Original string value =", greeting)
 
-	fmt.Println(ages, len(ages))
-	fmt.Println(names, len(names))
+	ages := []int{45, 20, 35, 70, 85, 32, 53}
+	
+	sort.Ints(ages)
+	fmt.Println(ages)
 
-	// SLICES (use arrays under the hood)
+	// klo gk ketemu dia bakal nambah jadi indexnya di urutan tersebut
+	index := sort.SearchInts(ages, 35)
+	fmt.Println(index)
 
-	var scores = []int{100, 50, 60}
-	scores[2] = 25
-	// dia nambahin dirow paling belakang si append
-	scores = append(scores, 85)
-	fmt.Println(scores, len(scores))
+	names := []string{"farrell", "hartono", "auigi", "bario"}
+	//klo ada huruf kapital dia sort yang besar terlebih dahulu
+	names2 := []string{"farrell", "Hartono", "Auigi", "bario"}
 
-	// slice ranges : dia cuman ngambil dari posisi 1-3 (inklusif)
-	// inklusif jadi 1-3 array posisi ketiga tidak diambil
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
+	sort.Strings(names)
+	sort.Strings(names2)
+	
+	fmt.Println(names, names2)
 
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
-
-	rangeOne = append(rangeOne, "koopa")
-	fmt.Println(rangeOne)
-
+	fmt.Println(sort.SearchStrings(names, "auigi"))
 }
