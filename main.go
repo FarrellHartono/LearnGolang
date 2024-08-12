@@ -3,41 +3,40 @@ package main
 import "fmt"
 
 func main() {
+	// di go semuanya make for jadi while jadi for
+	// WHILE LOOP
+	// x := 0
+	// for x < 5 {
+	// 	fmt.Println("value of x is:", x)
+	// 	x++
+	// }
 
-	// strings
-	var nameOne string = "Farrell"
-	var nameTwo = "luigi"
-	var nameThree string
-	nameThree = "mario"
+	// FOR LOOP
+	// for i := 0; i < 5; i++{
+	// 	fmt.Println("value of i is:", i)
+	// }
 
-	fmt.Println(nameOne, nameTwo, nameThree)
-	nameOne = "Hartono"
+		names := []string{"Farrell", "Hartono", "luigi", "mario"}
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+		// for i := 0; i < len(names); i++{
+		// 	fmt.Println(names[i])
+		// }
 
-	nameFour := "Ignatius"
+		// for index, value := range names{
+		// 	fmt.Printf("the value at index %v is %v \n", index, value)
+		// }
 
-	fmt.Println(nameFour)
+		// for _, value := range names{
+		// 	fmt.Printf("the value is %v \n", value)
+		// }
 
-	// ints
-	var ageOne int = 21
-	var ageTwo = 3
-	ageThree := 4
+		// jika valuenya diganti jadi new string
+		// tidak diganti tetep make names.
+		for _, value := range names{
+			fmt.Printf("the value is %v \n", value)
+			value = "new string"
+		}
 
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits & memory
-	var numOne int16 = 25
-	var numTwo = -129
-	var numThree uint8 = 255
-	fmt.Println(numOne, numTwo, numThree)
-
-	// Float
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 888729.21231
-	// Bydefault ini float64
-	scoreThree:= -1.5
-
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
-
+		fmt.Println(names)
+	
 }
